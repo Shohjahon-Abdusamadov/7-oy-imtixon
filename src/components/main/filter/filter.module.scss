@@ -1,0 +1,74 @@
+@mixin center {
+    max-width: 1298px;
+    margin: auto;
+    padding-inline: 1rem;
+}
+
+
+@mixin flex(
+  $align-items: center, 
+  $justify-content: center, 
+  $gap: 0px,
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+
+@mixin textContent(
+    $font-family: 'Inter',
+    $font-size: 0px,
+    $font-weight: 0,
+    $line-height: 0px,
+    $letter-spacing: 0em,
+    $text-align: center,
+    $-color: inherit,
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-align: $text-align;
+    color: $-color;
+}
+
+
+
+.sortby {
+    @include center;
+    @include flex(center, space-between, 0px);
+    
+    p {
+        @include textContent("Hammersmith One", 24px, 400, 30px, normal, left, #0BA42D);
+    }
+
+    select {
+        font-family: 'Hammersmith One';
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: center;
+        color: #0BA42D;
+        background-color: inherit;
+        
+        border-radius: 4px;
+        outline: none;
+        border: none;
+      }
+      
+      option {
+        font-family: 'Hammersmith One';
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: center;
+        color: #0BA42D;
+        background-color: inherit;
+      
+        padding: 8px;
+      }
+      
+}

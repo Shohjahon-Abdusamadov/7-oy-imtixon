@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin center {
+    max-width: 1298px;
+    margin: auto;
+    padding-inline: 1rem;
+}
+
+@mixin flex(
+  $align-items: center, 
+  $justify-content: center, 
+  $gap: 0px,
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin textContent(
+    $font-family: 'Inter',
+    $font-size: 0px,
+    $font-weight: 0,
+    $line-height: 0px,
+    $letter-spacing: 0em,
+    $text-align: center,
+    $-color: inherit,
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-align: $text-align;
+    color: $-color;
+}
+
+footer {
+    background-color: #0D2612;
+    padding-top: 78px;
+    padding-bottom: 34px;
+}
+
+.footer_wrapper {
+    @include center;
+    @include flex(start, space-between, 0px);
+
+    .footerPrimary {
+        img {
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        p {
+            @include textContent("Hammersmith One", 22px, 400, 27.5px, normal, left, #fff);
+            max-width: 250px;
+            margin-bottom: 157px;
+        }
+
+        .icons {
+            @include flex(center, start, 22px);
+            margin-bottom: 30px;
+        }
+    }
+
+    .footerSecondary {
+        @include flex(start, start, 125px);
+        h4 {
+            @include textContent("Inter", 24px, 700, 29.05px, normal, left, #fff);
+            margin-bottom: 29px
+        }
+
+        ul {
+            @include flex(start, start, 19px);
+            flex-direction: column;
+            margin: 0;
+        }
+    }
+
+}
+
+.link {
+    @include textContent("Inter", 18px, 400, 21.78px, normal, left, #fff);
+    text-decoration: none;
+    text-align: left;
+}
+
+.footer_bot {
+    @include center;
+    .line {
+        border: 2px solid #fff;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .bot {
+        @include flex(center, space-between, 0px);
+    }
+}

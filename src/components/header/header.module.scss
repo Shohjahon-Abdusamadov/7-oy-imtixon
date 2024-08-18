@@ -1,0 +1,138 @@
+@mixin center {
+    max-width: 1298px;
+    margin: auto;
+    padding-inline: 1rem;
+}
+
+@mixin flex(
+  $align-items: center, 
+  $justify-content: center, 
+  $gap: 0px,
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin textContent(
+    $font-family: 'Inter',
+    $font-size: 0px,
+    $font-weight: 0,
+    $line-height: 0px,
+    $letter-spacing: 0em,
+    $text-align: center,
+    $-color: inherit,
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-align: $text-align;
+    color: $-color;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+.wrapper {
+    background-color: #0D2613;
+}
+
+header {   
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    .headerWrapper {
+        @include center;
+        @include flex(center, space-between, 0px);
+        margin-bottom: 46px;
+        padding-block: 19px;
+    
+        .logo {
+            @include flex(center, start, 32px);
+        }
+    
+        .phone {
+            @include textContent("Inter", 14px, 500, 16.94px, normal, left, #fff);
+        }
+    
+    
+        .shop {
+            @include flex(center, start, 25px);
+    
+            p {
+                @include textContent("Inter", 14px, 400, 16.94px, normal, left, #fff);
+                margin: 0;
+            }
+    
+            a {
+                @include textContent("Inter", 14px, 400, 16.94px, normal, left, #fff);
+                text-decoration: none;
+            }
+    
+            .line {
+                height: 30px;
+                width: 4px;
+                background-color: #14FF00;
+            }
+        }
+    
+        .optionWrapper {
+            @include flex(center, start, 44px);
+            
+            .option {
+                @include flex(center, start, 11px);
+                @include textContent("Inter", 14px, 500, 16.94px, normal, left, #fff);
+            }
+        
+            .location {
+                @include flex(center, start, 8px);
+                @include textContent("Inter", 14px, 500, 16.94px, normal, left, #fff);
+            }
+        }
+    }
+
+    .navWrapper {
+        @include center;
+        @include flex(center, space-between, 0px);
+        margin-bottom: 46px;
+        nav {
+            background-color: #fff;
+
+            ul {
+                @include flex(center, start, 40px);
+                li{
+                    list-style: none;
+                    .link {
+                        @include textContent("Inter", 16px, 500, 19.36px, normal, left, #0D2612);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .icons {
+            font-size: 18px;
+            @include flex(center, start, 42px);
+
+            .cartCount {
+                position: absolute;
+                top: 105px;
+                color: rgb(246, 3, 3);
+                font-size: 18px;
+                font-weight: bold;
+              }
+        }
+
+    }
+
+}
+

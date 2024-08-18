@@ -1,0 +1,47 @@
+@mixin center {
+    max-width: 1298px;
+    margin: auto;
+    padding-inline: 1rem;
+}
+
+@mixin textContent(
+    $font-family: 'Inter',
+    $font-size: 0px,
+    $font-weight: 0,
+    $line-height: 0px,
+    $letter-spacing: 0em,
+    $text-align: center,
+    $-color: inherit,
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-align: $text-align;
+    color: $-color;
+}
+
+.hero {
+    height: 629px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 39px;
+    .heroInfo{
+        @include center;
+        padding-left: 75px;
+        // margin-left: 150px;
+        
+        p {
+            @include textContent("Hammersmith One", 20px, 400, 25px, normal, left, #fff);
+        }
+
+        h1 {
+            @include textContent("Hammersmith One", 46px, 400px, 57.5px, normal, left, #fff);
+            max-width: 537px;
+        }
+    }
+}
+
+
+

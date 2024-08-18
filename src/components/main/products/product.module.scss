@@ -1,0 +1,89 @@
+@mixin center {
+    max-width: 1298px;
+    margin: auto;
+    padding-inline: 1rem;
+}
+
+@mixin textContent(
+    $font-family: 'Inter',
+    $font-size: 0px,
+    $font-weight: 0,
+    $line-height: 0px,
+    $letter-spacing: 0em,
+    $text-align: center,
+    $-color: inherit,
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-align: $text-align;
+    color: $-color;
+}
+
+
+.products{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+   
+}
+.product_card{
+    max-width: 290px;
+    padding: 5px;
+
+    img{
+        width: 100%;
+    }
+
+    h3 {
+        @include textContent("Hammersmith One", 20px, 400, 25px, normal, left, #000);
+    }
+
+    p {
+        @include textContent("Readex Pro", 18px, 400, 22.5px, normal, left, #190D26);
+        margin-bottom: 21px;
+        width: 25rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        white-space: normal;
+        text-overflow: ellipsis;
+    }
+
+    strong {
+        @include textContent("Readex Pro", 22px, 600, 27.5px, normal, left, #190D26);
+    }
+
+    button {
+        @include textContent("Inter", 22px, 700, 26.63px, normal, center, #fff);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 34px;
+        border-radius: 10px;
+        background-color: #0BA42D;
+        border: none;
+
+        &:hover {
+            background-color: rgba(11, 164, 45, 0.7);
+        }
+    }
+}
+.colors{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 26px;
+}
+
+.error{
+    color: red;
+}
+
+.loading{
+    color: green;
+}
